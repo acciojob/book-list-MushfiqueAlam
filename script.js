@@ -1,6 +1,6 @@
 //your JS code here. If required.
 const form = document.querySelector('form');
-const table=document.querySelector('.table');
+const bookList=document.querySelector('#book-list');
 
 const thead=document.querySelector('.table thead');
 // thead.innerHTML="<hr>"
@@ -9,7 +9,7 @@ form.addEventListener('submit', (e) => {
     const bookTitle= document.querySelector('#title').value;
     const bookAuthor= document.querySelector('#author').value;
     const bookisbn= document.querySelector('#isbn').value;
-    const row=table.insertRow(-1);
+    const row=bookList.insertRow(-1);
     
     const cell1=row.insertCell(0);
     const cell2=row.insertCell(1);
@@ -27,7 +27,7 @@ form.addEventListener('submit', (e) => {
     deleteButton.style.color='red';
     deleteButton.style.cursor='pointer';
     deleteButton.addEventListener('click', () => {
-        table.deleteRow(row.rowIndex);
+        bookList.deleteRow(row.rowIndex);
     });
 
     cell4.appendChild(deleteButton);
